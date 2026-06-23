@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cài Đặt</title>
+    <style>
+        .container { display: flex; gap: 20px; }
+        .column { flex: 1; }
+    </style>
+</head>
+<body>
+    <h1>Cài Đặt Thông Tin Cá Nhân</h1>
+    <form action="https://basic-web-training.vercel.app/api/practice/submit/settings" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="formType" value="settings">
+        <input type="hidden" name="userId" value="12345">
+        
+        <div class="container">
+            <div class="column">
+                <section>
+                    <h2>Thông tin cá nhân</h2>
+                    <label>Avatar: <input type="file" name="avatar" accept="image/*"></label><br>
+                    <label>Họ: <input type="text" name="lastname" value="Nguyễn" required></label><br>
+                    <label>Tên: <input type="text" name="firstname" value="Văn A" required></label><br>
+                    <label>Ngày sinh: <input type="date" name="birthdate"></label><br>
+                    <label>Giới tính: <input type="radio" name="gender" value="male"> Nam <input type="radio" name="gender" value="female"> Nữ</label>
+                </section>
+                <section>
+                    <h2>Bảo mật & Đổi mật khẩu</h2>
+                    <label>Mật khẩu hiện tại: <input type="password" name="currentPassword"></label><br>
+                    <label>Mật khẩu mới: <input type="password" name="newPassword" minlength="8"></label><br>
+                    <label>Xác nhận mật khẩu mới: <input type="password" name="confirmNewPassword" minlength="8"></label>
+                </section>
+            </div>
+
+            <div class="column">
+                <section>
+                    <h2>Thông tin liên lạc</h2>
+                    <label>Email: <input type="email" name="email" readonly value="user@example.com"></label><br>
+                    <label>SĐT: <input type="tel" name="phone" pattern="[0-9]{10,11}"></label><br>
+                    <label>Địa chỉ: <input type="text" name="address" placeholder="Nhập địa chỉ"></label><br>
+                    <label>Tỉnh/TP: 
+                        <select name="city">
+                            <option value="hanoi">Hà Nội</option>
+                            <option value="hcm">TP.HCM</option>
+                            <option value="danang">Đà Nẵng</option>
+                        </select>
+                    </label><br>
+                    <label>Website: <input type="url" name="website" placeholder="https://..."></label>
+                </section>
+                <section>
+                    <h2>Tùy chọn nhận thông báo</h2>
+                    <label><input type="checkbox" name="emailNotif" value="1" checked> Nhận thông báo</label><br>
+                    <label>Giờ gửi: <input type="time" name="notifTime" value="08:00"></label><br>
+                    <label>Tần suất (ngày): 
+                        <input type="range" name="notifFreq" min="1" max="7" value="3" oninput="this.nextElementSibling.value = this.value">
+                        <output>3</output>
+                    </label>
+                </section>
+            </div>
+        </div>
+
+        <button type="reset">Hoàn Tác</button>
+        <button type="submit">Lưu Thay Đổi</button>
+    </form>
+</body>
+</html>

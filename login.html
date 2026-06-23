@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+</head>
+<body>
+    <h1>Đăng nhập</h1>
+    <p>Vui lòng nhập thông tin tài khoản của bạn để đăng nhập vào hệ thống.</p>
+
+    <form action="https://basic-web-training.vercel.app/api/practice/submit/login" method="POST">
+        <input type="hidden" name="formType" value="login">
+        
+        <label>Email: <input type="email" name="email" placeholder="vidu@email.com" required></label><br>
+        <label>Mật khẩu: <input type="password" name="password" minlegth="6" required></label><br>
+        <label><input type="checkbox" name="remember" value="1" checked>Ghi nhớ đăng nhập</label><br>
+
+        <button type="submit">Đăng nhập</button>
+        <p><a href="#">Quên mật khẩu?</a> | <a href="register.html">Chưa có tài khoản? Đăng ký ngay</a></p>
+    </form>
+</body>
+</html>
